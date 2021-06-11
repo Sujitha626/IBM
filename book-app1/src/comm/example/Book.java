@@ -7,6 +7,7 @@ import java.util.Random;
  *Organization : AI Graduate
  **/
 
+@SuppressWarnings("unused")
 public class Book {
 	public String author;
 	public float costPrice;
