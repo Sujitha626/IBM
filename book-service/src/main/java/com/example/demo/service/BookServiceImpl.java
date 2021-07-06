@@ -34,4 +34,12 @@ public class BookServiceImpl implements BookService {
 		return bookDaoImpl.createBook(book);
 	}
 
+
+
+	@Override
+	public Book findById(Integer id) {
+		// TODO Auto-generated method stub
+		return bookDaoImpl.findById(id);
+	}
+
 }

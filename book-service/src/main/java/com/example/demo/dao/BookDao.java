@@ -8,5 +8,7 @@ public interface BookDao {
 	public Book createBook(Book book);
 	
 	public Collection<Book> displayAllBook();
+	
+	public Book findById(Integer id);
 
 }

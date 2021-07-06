@@ -17,11 +17,11 @@ public class BookDaoImpl implements BookDao{
 	@Autowired
 	public BookDaoImpl(Map<Integer, Book> bookMap) {
 		this.bookMap = bookMap;
-		bookMap.put(new Random().nextInt(), new Book(UUID.randomUUID().toString(), "Node JS", 20.9));
-		bookMap.put(new Random().nextInt(), new Book(UUID.randomUUID().toString(), "ReactJS", 29.9));
-		bookMap.put(new Random().nextInt(), new Book(UUID.randomUUID().toString(), "Angular JS", 29.7));
-		bookMap.put(new Random().nextInt(), new Book(UUID.randomUUID().toString(), "Pro Spring", 30.8));
-		bookMap.put(new Random().nextInt(), new Book(UUID.randomUUID().toString(), "Pro Java", 23.8));
+		bookMap.put(new Random().nextInt(100), new Book(UUID.randomUUID().toString(), "Node JS", 20.9));
+		bookMap.put(new Random().nextInt(100), new Book(UUID.randomUUID().toString(), "ReactJS", 29.9));
+		bookMap.put(new Random().nextInt(100), new Book(UUID.randomUUID().toString(), "Angular JS", 29.7));
+		bookMap.put(new Random().nextInt(100), new Book(UUID.randomUUID().toString(), "Pro Spring", 30.8));
+		bookMap.put(new Random().nextInt(100), new Book(UUID.randomUUID().toString(), "Pro Java", 23.8));
 	}
 
 
@@ -41,5 +41,14 @@ public class BookDaoImpl implements BookDao{
 		bookMap.put(new Random().nextInt(1000), book);
 		return book;
 	}
+
+
+
+	@Override
+	public Book findById(Integer id) {
+		
+		return bookMap.get(id);
+	}
+	
 
 }
