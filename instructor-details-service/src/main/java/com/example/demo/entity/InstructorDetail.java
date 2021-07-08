@@ -9,15 +9,19 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Entity
 @Table(name = "instructor_detail")
+@ToString
 public class InstructorDetail {
 
 	@Id
@@ -32,6 +36,7 @@ public class InstructorDetail {
 	private String hobby;
 
 	@OneToOne(mappedBy = "instructorDetail", cascade = CascadeType.ALL)
+	@JsonBackReference
 	private Instructor instructor;
 
 }
